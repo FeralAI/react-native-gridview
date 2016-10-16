@@ -1,6 +1,8 @@
 # react-native-gridview
 A flexible grid view based on React Native's ListView component.
 
+![react-native-gridview-preview](https://github.com/jskuby/react-native-gridview/blob/master/demos/react-native-gridview-preview.gif?raw=true)
+
 ## Introduction
 React Native's ListView can be customized to render in a grid layout, but suffers from some issues:
 
