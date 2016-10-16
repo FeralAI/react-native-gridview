@@ -56,4 +56,4 @@ Check out the `gridview` project in the examples folder for advanced usage.
 * **`itemsPerRowLandscape/itemsPerRowPortrait`** _(Integer)_ - Provide one or both of these to override `itemsPerRow` in the specified orientation.  If one or both are provided, when `GridView` fires the `onLayout` event it will determine the orientation (using height/width check based on `Dimensions.get('window')`) and rebind the `data` or `dataSource` property to cause the grid content to re-render.
 * **`itemStyle`** _(View.propTypes.style)_ - The style to apply to the item container after the default style of `{ flex: 1 }`.
 * **`renderItem`** _(Function)_ - Render function called for each item in the data source.
-* **`rowStyle`** _(View.propTypes.style)_ - The style to apply to the row container after the default style of `{ flexDirection: 1 }`.
+* **`rowStyle`** _(View.propTypes.style)_ - The style to apply to the row container after the default style of `{ flexDirection: 'row' }`.
