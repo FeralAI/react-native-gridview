@@ -49,13 +49,14 @@ class App extends Component {
     return (
       <GridView
         data={this.state.data}
+        /** `dataSource` will override `data` */
         dataSource={this.state.dataSource}
         padding={4}
         itemsPerRow={this.state.itemsPerRow}
         /** You can set different item counts for portrait and/or landscape mode */
         // itemsPerRowPortrait={4}
         // itemsPerRowLandscape={7}
-        renderItem={(item, sectionID, rowID, index, itemID) => {
+        renderItem={(item, sectionID, rowID, itemIndex, itemID) => {
           const randomValue = this.state.variableContent ? item.randomValue : BASE_SIZE;
 
           return (
@@ -89,23 +90,17 @@ class App extends Component {
         <View style={styles.row}>
           <Slider
             style={styles.slider}
-            minimumValue={1}
-            maximumValue={10}
-            step={1}
+            minimumValue={1} maximumValue={10} step={1}
             value={this.state.itemsPerRow}
             onValueChange={this._itemsPerRowChanged}
           />
-          <Text style={styles.sliderText}>
-            {this.state.itemsPerRow}
-          </Text>
+          <Text style={styles.sliderText}>{this.state.itemsPerRow}</Text>
         </View>
         <Text>Item count</Text>
         <View style={styles.row}>
           <Slider
             style={styles.slider}
-            minimumValue={10}
-            maximumValue={250}
-            step={1}
+            minimumValue={10} maximumValue={250} step={1}
             value={this.state.itemCount}
             onValueChange={this._itemCountChanged}
           />
@@ -113,18 +108,14 @@ class App extends Component {
         </View>
         <View style={[styles.row, { justifyContent: 'space-between' }]}>
           <TouchableOpacity style={styles.button} onPress={this._randomizeContent}>
-            <Text style={styles.buttonText}>
-              Randomize Content
-            </Text>
+            <Text style={styles.buttonText}>Randomize Content</Text>
           </TouchableOpacity>
           <View style={styles.row}>
             <Switch
               value={this.state.useRandomCounts}
               onValueChange={this._useRandomCountsChanged}
             />
-            <Text style={{ marginLeft: 8 }}>
-              Vary items per row
-            </Text>
+            <Text style={{ marginLeft: 8 }}>Vary items per row</Text>
           </View>
         </View>
       </View>
@@ -230,7 +221,7 @@ class App extends Component {
 
 function generateData(itemCount) {
   return Array(itemCount)
-    .fill('')
+    .fill(null)
     .map((item, index) => {
       const colorIndex = index % 3;
       return {
@@ -280,11 +271,8 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
-  },
-  itemSpacing: {
-    flex: 1,
     margin: 4,
+    overflow: 'hidden',
   },
 });
 
