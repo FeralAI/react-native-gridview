@@ -16,8 +16,6 @@ for grid-based layouts.
 `npm install react-native-gridview --save`
 
 ## Basic Usage
-A simple component that renders a static grid with 3 items per row:
-
 ```javascript
 import React from 'react';
 import { Text, View } from 'react-native';
@@ -25,13 +23,14 @@ import GridView from 'react-native-gridview';
 
 const itemsPerRow = 3;
 
-// Create some dummy data
+// Use data from an array...
 const data = Array(20)
   .fill(null)
   .map((item, index) => index + 1);
 
-// Create data source with items per row between 1 and 3
-// This will be used if the `randomizeRows` prop is `true`
+// ...or create your own data source.
+// This will randomly allocate 1-3 items per row, and will be used
+// if the `randomizeRows` prop is `true`.
 const randomData = [];
 for (let i = 0; i < data.length; i) {
   const endIndex = Math.max(Math.round(Math.random() * itemsPerRow), 1) + i;
