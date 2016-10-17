@@ -1,6 +1,6 @@
 {
   "name": "react-native-gridview",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A flexible grid view based on React Native's ListView component.",
   "main": "index.js",
   "keywords": [
