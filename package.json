@@ -10,6 +10,10 @@
     "GridView",
     "Responsive"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jskuby/react-native-gridview.git"
+  },
   "author": "Jason Skuby",
   "license": "ISC"
 }
