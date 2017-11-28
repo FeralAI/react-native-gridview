@@ -15,5 +15,8 @@
     "url": "git+https://github.com/jskuby/react-native-gridview.git"
   },
   "author": "Jason Skuby",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.5.7"
+  }
 }

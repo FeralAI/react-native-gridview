@@ -1,13 +1,6 @@
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
-import {
-  Dimensions,
-  ListView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Dimensions, ListView, StyleSheet, View } from 'react-native';
 
 class GridView extends Component {
   constructor(props) {
