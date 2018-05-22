@@ -29,6 +29,7 @@ class GridView extends Component {
       itemsPerRow: PropTypes.number,
       itemsPerRowLandscape: PropTypes.number,
       itemsPerRowPortrait: PropTypes.number,
+        header:PropTypes.func,
       itemStyle: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.number,
@@ -65,6 +66,7 @@ class GridView extends Component {
 
     return (
       <ListView
+          renderHeader={this.props.header}
         onLayout={(...args) => {
           /**
            * The grid data needs to be rebound if the items per row is
